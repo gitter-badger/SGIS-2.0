@@ -17,11 +17,15 @@ angular
     'ngSanitize',
     'ngTouch',
     'google-maps',
-    'ngAutocomplete'
+    'ngAutocomplete',
+    'angularCharts',
+    'checklist-model',
+    'ui.bootstrap.showErrors'
   ])
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/', {
+      
+      .when('/main', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
@@ -29,8 +33,16 @@ angular
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       })
+      .when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl'
+      })
+      .when('/register', {
+        templateUrl: 'views/register.html',
+        controller: 'LoginCtrl'
+      })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/about'
       });
   });
 
