@@ -15,6 +15,7 @@
     "angular-google-maps": "~1.1.4",
     "autocomplete": "~0.1.9",
     "ngAutocomplete": "~1.0.0",
+<<<<<<< HEAD
     "angular-strap": "~2.0.3",
     "angular-charts": "~0.2.4",
     "angular-multi-select": "~2.0.0",
@@ -26,6 +27,11 @@
     "jquery-ui": "~1.11.1",
     "angucomplete": "*",
     "bluebird": "~2.3.5"
+=======
+    "angular-charts": "~0.2.4",
+    "checklist-model": "~0.1.3",
+    "angular-bootstrap-show-errors": "~1.0.2"
+>>>>>>> master
   },
   "devDependencies": {
     "angular-mocks": "1.2.16",

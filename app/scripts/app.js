@@ -16,6 +16,7 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
+<<<<<<< HEAD
     'google-maps'.ns(),
     'ngAutocomplete',
     'mgcrea.ngStrap',
@@ -25,13 +26,21 @@ angular
     'djangoRESTResources',
     'ngTagsInput',
     'angucomplete'
+=======
+    'google-maps',
+    'ngAutocomplete',
+    'angularCharts',
+    'checklist-model',
+    'ui.bootstrap.showErrors'
+>>>>>>> master
   ])
 
   .config(function ($routeProvider) {
     //,$resourceProvider
     //$resourceProvider.defaults.stripTrailingSlashes = false;
     $routeProvider
-      .when('/', {
+      
+      .when('/main', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
@@ -39,8 +48,16 @@ angular
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       })
+      .when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl'
+      })
+      .when('/register', {
+        templateUrl: 'views/register.html',
+        controller: 'LoginCtrl'
+      })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/about'
       });
    
   });

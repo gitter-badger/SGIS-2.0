@@ -8,6 +8,7 @@
  * Controller of the socialjusticeApp
  */
 angular.module('socialjusticeApp')
+<<<<<<< HEAD
   .controller('MainCtrl',function ($scope,$http,$routeParams,
                                 $modal,$resource,$timeout, 
                                 dataSource, dataFeed,dataEdit,
@@ -15,6 +16,13 @@ angular.module('socialjusticeApp')
                                 tagFiltering,locationService) 
     {
     var google = window.google;
+=======
+  .controller('MainCtrl',function ($scope,$http,$location,$window,dataSource, dataFeed) {
+
+    $scope.$location = $location;
+    var google = window.google;
+    $scope.loggedIn=false;
+>>>>>>> master
     $scope.sources = dataSource.query();
     $scope.data = {};
     $scope.dataShow={};
@@ -245,6 +253,7 @@ angular.module('socialjusticeApp')
         $scope.selectedSource = [];
     };
     $scope.onSelect = function(dataSourceId) {
+<<<<<<< HEAD
         // if($scope.selectedSource[9]!==undefined){
         //     $scope.polygonFunc();
         // }
@@ -260,6 +269,14 @@ angular.module('socialjusticeApp')
             $scope.dataShow[dataSourceId]=$scope.data[dataSourceId];
             console.log($scope.data[dataSourceId]);
             console.log('clicking input box again');
+=======
+        if($scope.data[dataSourceId] !== undefined) {
+            console.log('1');
+            $scope.data[dataSourceId] = undefined;
+        } else {
+            console.log('2');
+            $scope.data[dataSourceId] = dataFeed.query({'dataSourceId':dataSourceId});
+>>>>>>> master
         }
         else if($scope.selectedSource[dataSourceId]===true) {
             console.log('entered false statement'); //when unclicks the input button
@@ -283,6 +300,7 @@ angular.module('socialjusticeApp')
             q(data,dataSourceId);
         });
     };
+<<<<<<< HEAD
     function q(data,dataSourceId) {
         console.log('you will never walk alone');
         var r=data.results.length; 
@@ -371,6 +389,20 @@ angular.module('socialjusticeApp')
                     }).$promise.then(loc);      
         }   
     }
+=======
+        $scope.result = '';
+        $scope.options = null;
+        $scope.details = '';
+        $scope.newMark={};
+    // Logout function
+    $scope.logout=function(){
+        $scope.loggedIn=false;
+        console.log('Logging out');
+        //delete $window.sessionStorage.token;
+        $location.path('/login');
+    };
+    // ConvertCoords will help in converting googlePlaces API variables into variables so that a marker on search button can be drawn
+>>>>>>> master
     $scope.convertCoords= function(){
         $scope.maxLon=0;
         $scope.minLon=0;
@@ -400,6 +432,7 @@ angular.module('socialjusticeApp')
         $scope.LocationCheck();
         $scope.polygonFunc();
     };
+<<<<<<< HEAD
     $scope.LoadingBounds= function(){
         $scope.halt=1;
         $scope.maxLon=0;
@@ -444,10 +477,15 @@ angular.module('socialjusticeApp')
     $scope.map = {
         control: {},
         bounds: {},
+=======
+    //Provides with the default settings of the map
+    $scope.map = {
+>>>>>>> master
     	center: {
     	  	latitude: 42.678681,
     	  	longitude: -73.741265
     	},
+<<<<<<< HEAD
         events:{
             idle:function(){
                 console.log('bounds are changing');
@@ -456,10 +494,15 @@ angular.module('socialjusticeApp')
         },
     	zoom: 11,
     	options: {
+=======
+	    zoom: 9,
+	    options: {
+>>>>>>> master
     		streetViewControl: true,
     		panControl: true,
     		panControlOptions: {
     			position: google.maps.ControlPosition.TOP_RIGHT
+<<<<<<< HEAD
     		},
 
     		zoomControl: true,
@@ -494,6 +537,26 @@ angular.module('socialjusticeApp')
         }
     ];
     var onMarkerClicked = function (marker) {
+=======
+    	},
+		zoomControl: true,
+		zoomControlOptions: {
+				style: google.maps.ZoomControlStyle.LARGE,
+				position: google.maps.ControlPosition.RIGHT_TOP
+		},
+		maxZoom: 20,
+		minZoom: 3
+	    },
+	   dragging: true
+    };
+    //Function to close marker info window by giving close button
+    var markerToClose = null;
+    $scope.onClicked = function (marker) {
+            if (markerToClose) {
+              markerToClose.showWindow = false;
+            }
+        markerToClose = marker; // for next go around
+>>>>>>> master
         marker.showWindow = true;
         $scope.$apply();
     };

@@ -26,6 +26,7 @@
     </ui-gmap-drawing-manager>
 </ui-gmap-google-map>
 
+<<<<<<< HEAD
   </div>
   <div class="left-panel" >
     <form novalidate class="simple-form">
@@ -35,6 +36,14 @@
         <span class="input-group-btn">
         <button class="btn btn-primary" ng-click="convertCoords()" type="button">Search</button>
        <!--  <button class="btn btn-primary" ng-click="AddwithDescription();checkFilter()" type="button"><span class="glyphicon glyphicon-plus"></span></button> -->
+=======
+      <marker ng-repeat="n in newMark" coords="n" draggable="true"></marker>
+      <markers ng-repeat="dataset in data" models="dataset" coords="'self'" icon="'icon'" click="'onClicked'" fit='true' docluster="true" >
+          <windows show="'showWindow'" closeClick="'closeClick'" ng-cloak>
+            <p ng-non-bindable>Name of shop is :{{entity_name}} and city name is :{{city}} <br> </p>
+          </windows>
+      </markers>
+>>>>>>> master
 
         </span>
       </div>
@@ -42,6 +51,7 @@
     <div class="panel panel-default">
       <div class="panel-heading">
           <nav class="navbar navbar-primary" role="navigation">
+<<<<<<< HEAD
               <div class="container-fluid">
                       <ul class="nav navbar-nav">
                           <!--<li class="active"><a href="#">Datasets</a></li>-->
@@ -98,3 +108,24 @@
   </div>                 
   </div>
 </body>
+=======
+            <div class="container-fluid">
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <ul class="nav navbar-nav">
+                    <button class="btn-primary" type="button" class="btn btn-default btn-lg">
+                        <span class="glyphicon glyphicon-stats"> Charts</span>
+                    </button>
+                    <button class="btn-primary" type="button" class="btn btn-default btn-lg">
+                        <span class="glyphicon glyphicon-pencil">Draw</span>
+                    </button>
+                    <button class="btn-primary" type="button" class="btn btn-default btn-lg">
+                        <span class="glyphicon glyphicon-plus">Add</span>
+                    </button>
+                </ul>
+            </div><!-- /.container-fluid -->
+        </nav>
+    </div>
+  </div>
+
+</div>
+>>>>>>> master

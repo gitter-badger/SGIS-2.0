@@ -41,6 +41,7 @@
     padding-bottom: 0px;
 }
 body { padding-bottom: 70px; }
+<<<<<<< HEAD
 .custom-info-window{
     background: rgba(0,0,0,0.5);
     color: white;
@@ -106,6 +107,24 @@ height: 50%;
 }
 .border{
 border-color: black
+=======
+.chart {
+    width: 500px;
+    height: 500px;
+}
+.jumbotron{
+	
+	width: 100%;
+	height: 100%;
+}
+.container{
+	width: 30%;
+	height: 50%;
+	
+}
+.border{
+	border-color: black
+>>>>>>> master
 }
 .form-group .help-block {
   display: none;
@@ -113,6 +132,7 @@ border-color: black
 
 .form-group.has-error .help-block {
   display: block;
+<<<<<<< HEAD
 }
 .modal-backdrop.am-fade {
     opacity: .7;
@@ -174,3 +194,6 @@ border-color: black
   color: #262626;
   background-color: #ffff00;
 }
+=======
+}
+>>>>>>> master
