@@ -75,13 +75,13 @@ angular.module('socialjusticeApp')
           $scope.product={};
           $scope.product.mappoint=tagId;
           $scope.product.tag=$scope.dataTag.outputTagSelect[k].id;
-          var product =new dataEdit($scope.product);
+          var product =dataEdit($scope.product);
           console.log($scope.dataTag.outputTagSelect[k].id);
           console.log($scope.product.mappoint);
           product.$create();
         }
     };
-  //=================================================
+  //===================
   $scope.drawingManagerOptions = {
     drawingMode: google.maps.drawing.OverlayType.MARKER,
     drawingControl: true,
@@ -191,7 +191,9 @@ angular.module('socialjusticeApp')
     };
     $scope.checkFilter=function(){
             $scope.selectedTagUrl='';
-
+            function dummy(){
+                $scope.dataDuplicate[a]=filterData1;
+            }
             for(var m=0 ;m<=$scope.selectedTag.length-2;m++){
                 $scope.selectedTagUrl=$scope.selectedTagUrl+$scope.selectedTag[m].tag+',';
             }
@@ -208,14 +210,11 @@ angular.module('socialjusticeApp')
                 console.log('value of a '+a);
                 var filterData1=tagFiltering.query({
                                 selectedTag:$scope.selectedTagUrl,
-                                dataId:a, matchModel:$scope.matchModel
-                            },
-                                function(){
-                                    $scope.dataDuplicate[a]=filterData1;
-                                    //console.log($scope.dataDuplicate[a]);
-                                });
+                                dataId:a, matchModel:$scope.matchModel},dummy());
             }
         }
+
+
     };
     $scope.refresh=false;
     $scope.refreshMap=function(){
